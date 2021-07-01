@@ -1,0 +1,43 @@
+
+.post-card.card {
+    height: 345px;
+    border-radius: 10px;
+    box-shadow: 11px 9px 13px -7px gray;
+    background-color: #ffffff;
+}
+.card-body{
+    transition: .5s;
+}
+
+p.card-text {
+    height: 85px;
+}
+
+.user-card:hover {
+    background-color: #ffffff;
+    transition: .5s;
+    transform-style: (1.5);
+    transform: scale(1.05);
+    border-radius: 10px;
+
+}
+a.arrow-up {
+    text-decoration: none;
+    float: right;
+    font-size: 27px;
+    background-color: #6047ec;
+    padding: 5px;
+    border-radius: 5px;
+    color: #ff3d8a;
+    border-radius: 5;
+    border-radius: 5;
+    margin-right: -60px;
+    transition: .3s;
+}
+
+a.arrow-up:hover{
+    background-color: #ff3585;
+    color: #ffff;
+    transition: .3s;
+   
+}

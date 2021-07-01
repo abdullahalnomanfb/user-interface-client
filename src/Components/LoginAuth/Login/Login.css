@@ -1,0 +1,50 @@
+.login-form{
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+.sign-with-pop{
+    text-align: center;
+    width: 400px;
+    margin: auto;
+}
+.login{
+    cursor: pointer;
+    color: tomato;
+}
+.from {
+    max-width: 500px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 1% 5%;
+    padding-top: 20px;
+    border-radius: 5px;
+    margin-bottom: 18px;
+    box-shadow: 11px 17px 20px #ddd
+}
+.error-handle p{
+    color: red;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 20px;
+}
+.error-handle h3{
+    color: green;
+    font-family: arial black;
+
+    
+}
+.error-handle{
+    text-align: center;
+}
+.sign-with-pop button{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8px;
+}
+.gLogo{
+    width: 30px;
+    margin-left: -132px;
+    margin-right: 76px;
+}

@@ -1,0 +1,31 @@
+.nav-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+  
+}
+.view-profile{
+    background-color: #ff468f;
+    padding: 7px;
+    border-radius: 28px;
+    color: white;
+}
+
+.dropdown-item:hover{
+    background-color: transparent !important;
+}
+
+
+
+.dropdown-item.active, .dropdown-item:active{
+    background-color: transparent !important;
+    
+}
+.white{
+    color: black;
+}
+.nav-img-profile{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+}
