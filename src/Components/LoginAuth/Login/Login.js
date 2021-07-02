@@ -38,23 +38,23 @@ const Login = () => {
     const [errors, setErrors] = useState(false)
 
     //GoogleSignIn 
-    const handleGoogleSignIn = () => {
+    // const handleGoogleSignIn = () => {
 
-        const provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth()
-            .signInWithPopup(provider)
-            .then((result) => {
-                var { displayName, email, photoURL } = result.user;
-                const logInUSer = { name: displayName, email: email, photoURL }
-                setLogInUser(logInUSer);
-                history.replace(from);
-            })
-            .catch((error) => {
-                var errorMessage = error.message;
-                var credential = error.credential;
-                console.log(errorMessage, credential);
-            });
-    }
+    //     const provider = new firebase.auth.GoogleAuthProvider();
+    //     firebase.auth()
+    //         .signInWithPopup(provider)
+    //         .then((result) => {
+    //             var { displayName, email, photoURL } = result.user;
+    //             const logInUSer = { name: displayName, email: email, photoURL }
+    //             setLogInUser(logInUSer);
+    //             history.replace(from);
+    //         })
+    //         .catch((error) => {
+    //             var errorMessage = error.message;
+    //             var credential = error.credential;
+    //             console.log(errorMessage, credential);
+    //         });
+    // }
 
 
     const handleBlur = (e) => {
@@ -195,12 +195,12 @@ const Login = () => {
                 </div>
             </div>
 
-            <div className="sign-with-pop">
+            {/* <div className="sign-with-pop">
                 <p>Or</p>
                 <button className="btn btn-primary" onClick={handleGoogleSignIn}>
                     <img className="img-fluid gLogo" src={gLogo} alt="" />
                     Sign in with Google</button>
-            </div>
+            </div> */}
 
         </div>
 
