@@ -2,22 +2,18 @@ import { Modal } from 'react-bootstrap';
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 // import { PostContext } from './UserPostCard';
-import { useState } from 'react';
 import { PostContext } from './UserPost';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const UpdateForm = ({ show, setShow, postInfo }) => {
 
-     const [modify,setModify]=useContext(PostContext)
+    const [modify, setModify] = useContext(PostContext)
 
-      console.log("modify",modify);
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-
     const handleClose = () => setShow(false);
 
-
-    const[ count,setCount]=useState(1)
     const onSubmit = (data) => {
 
         const id = postInfo._id
@@ -54,17 +50,18 @@ const UpdateForm = ({ show, setShow, postInfo }) => {
 
                     <form onSubmit={handleSubmit(onSubmit)}>
 
-                        <input defaultValue={postInfo.title} {...register("title")} /> <br />
 
-                        <input defaultValue={postInfo.body} {...register("body")} /> <br />
-                        {/* 
-                        <div className="form-group row">
-                            <input  {...register("exampleRequired", { required: true })} /> <br />
-                            {errors.exampleRequired && <span className="text-danger">This field is required</span>} <br />
-                        </div>  */}
+                        <div className="form-group row w-75 text-center m-auto ">
+                            <input className="form-control" defaultValue={postInfo.title} {...register("title")} /> <br />
+                        </div><br />
 
-                        <Modal.Footer>
-                            <input className="btn-success px-4 py-2 rounded" type="submit" value="Update" />
+                        <div className="form-group row m-auto w-75 ">
+
+                            <textarea className="form-control" defaultValue={postInfo.body} {...register("body")} id="" cols="30" rows="7"></textarea>
+                        </div>
+
+                        <Modal.Footer style={{marginTop:"20px"}}>
+                          <input className="btn-success px-4 py-2 rounded" type="submit" value="Update" />
                         </Modal.Footer>
                     </form>
 

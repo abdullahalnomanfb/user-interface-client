@@ -22,13 +22,13 @@ const NavBars = () => {
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
-                            className="ml-auto my-2 my-lg-0"
+                            className="ml-auto my-2 my-lg-0 "
                             style={{ maxHeight: '100px' }}
 
                         >
                             <Nav.Link as={Link} to="/home" >Home</Nav.Link>
                             <Nav.Link as={Link} to="/addPost">My Profile</Nav.Link>
-                            <Nav.Link href="#action2">Contract</Nav.Link>
+                            <Nav.Link as={Link} to="/contract">Contract</Nav.Link>
 
                             {logInUser.email && <div className="mr-5">
                                 <NavDropdown
@@ -37,8 +37,8 @@ const NavBars = () => {
                                         logInUser.photoURL ? <img className="nav-img" src={logInUser.photoURL} alt="" /> : <FontAwesomeIcon icon={faUserCircle} style={{ fontSize: '25px',color:"white" }} />
                                     }
                                 >
-                                    <div className="text-center">
-                                        <NavDropdown.Item href="#action/3.1">
+                                    <div className="text-center ">
+                                        <NavDropdown.Item as={Link} to="/addPost">
                                             {
                                                 logInUser.photoURL ? <img className="nav-img-profile" src={logInUser.photoURL} alt="" /> : <FontAwesomeIcon icon={faUserCircle} style={{ fontSize: "100px" }} />
 
@@ -46,12 +46,12 @@ const NavBars = () => {
                                         </NavDropdown.Item>
                                         <NavDropdown.Item as={Link} to="/"> <h5>{logInUser.name}</h5></NavDropdown.Item>
 
-                                        <NavDropdown.Item href="/">
+                                        <NavDropdown.Item as={Link} to="/addPost">
                                             <span className="view-profile">View Profile</span>
                                         </NavDropdown.Item>
                                         <NavDropdown.Divider />
 
-                                        <NavDropdown.Item as={Link} to="/">
+                                        <NavDropdown.Item as={Link} to="/addPost">
                                             <div 
                                             onClick={()=>setLogInUser({})}
                                             className="text-danger">

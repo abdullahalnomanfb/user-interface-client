@@ -1,10 +1,14 @@
 import React from 'react';
+import NavBars from '../Shared/NavBars/NavBars';
 
 const NoFound = () => {
     return (
-        <div>
-            <h1 className="text-danger text-center mt-5">404 Not Found</h1>
+        <>
+        <NavBars />
+        <div className="text-center w-50 m-auto ">
+            <img className="img-fluid mt-5" src="https://drudesk.com/sites/default/files/2018-02/404-error-page-not-found.jpg" alt="" />
         </div>
+        </>
     );
 };
 

@@ -22,16 +22,15 @@ const UserPost = () => {
             .then(data => {
                 setPost(data)
             })
-
     }, [modify])
 
-    console.log("post", post);
+    // console.log("post", post);
     return (
         <PostContext.Provider value={[modify, setModify]}>
-            <div className="container-fluid">
+            <div className="container-fluid ">
                 <div className="row">
                     <SideBar />
-                    <div className="col-md-10 mt-5">
+                    <div style={{backgroundColor:'#f0f2f5'}} className="col-md-10 pt-5 ">
                         {
                             post.length === 0 ? <h4 className="text-danger text-center">You didn't publish any post . Please Write a new post...</h4> : <h4 className="text-primary text-center">You have {post.length} post</h4>
                         }

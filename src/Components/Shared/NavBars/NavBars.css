@@ -29,3 +29,16 @@
     width: 100px;
     border-radius: 100%;
 }
+
+a.nav-link{
+
+    color: white !important;
+    transition: .5s;
+}
+
+a.nav-link:hover {
+    background-color: #ff438d;
+    border-radius: 10px;
+    transition: .5s;
+    color: white ;
+}

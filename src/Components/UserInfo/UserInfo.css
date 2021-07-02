@@ -1,0 +1,19 @@
+thead tr th {
+    width: 400px;
+    background-color: #ddd;
+    padding: 9px;
+    color: blue;
+}
+
+tbody.tbody tr td {
+    width: 400px;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    font-weight: 700;
+    border-right: 1px solid #ddd;
+    transition: .3s;
+}
+tbody.tbody tr:hover{
+    background-color: #ddd;
+    transition: .3s;
+}

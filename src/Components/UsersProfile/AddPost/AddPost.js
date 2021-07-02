@@ -16,7 +16,7 @@ const AddPost = () => {
             body: data.content,
             name: logInUser.name,
             email: logInUser.email,
-            data: new Date().toDateString()
+            date: new Date().toDateString()
         }
 
 
@@ -44,6 +44,7 @@ const AddPost = () => {
                 <div className="row">
                     <SideBar />  
                     <div  style={{backgroundColor:"#f0f2f5"}}className="col-md-10">
+                        <h4 className="text-center pt-3">Hello, <span className="text-primary">{logInUser.name}</span> Let's write a post..</h4>
                         <div className="add-post-form">
                             <form  className="mt-5 p-5 w-70" onSubmit={handleSubmit(onSubmit)}>
 
@@ -54,7 +55,7 @@ const AddPost = () => {
 
 
                                 <label for="exampleFormControlTextarea1" class="form-label">Add post content</label>
-                                <textarea className="form-control" cols="30" rows="10" {...register("content", { required: true })} />
+                                <textarea className="form-control" cols="20" rows="8" {...register("content", { required: true })} />
                                 {errors.content && <span className="error">Content field is require
                                 </span>} <br />
 

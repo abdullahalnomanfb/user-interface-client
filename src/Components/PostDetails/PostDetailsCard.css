@@ -1,0 +1,17 @@
+p.msg {
+    background-color: #f0f2f5;
+    width: 219px;
+    padding: 10px;
+    border-radius: 19px;
+}
+
+p.date {
+    color: #beb2b8;
+    margin-top: -12px;
+    margin-left: 15px;
+    font-size: 13px;
+}
+
+h6.name {
+    color: #007bff;
+}

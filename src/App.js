@@ -14,6 +14,8 @@ import { useState } from 'react';
 import PrivateRoute from './Components/LoginAuth/PrivateRoute/PrivateRoute';
 import AddPost from './Components/UsersProfile/AddPost/AddPost';
 import UserPost from './Components/UsersProfile/UserPost/UserPost';
+import UserInfo from './Components/UserInfo/UserInfo';
+import UserProfileDetails from './Components/UserInfo/UserProfileDetails';
 export const UserContext = createContext()
 
 const App = () => {
@@ -34,10 +36,13 @@ const App = () => {
           <PrivateRoute path="/addPost"  >
             <AddPost />
           </PrivateRoute>
-
+         
+          <PrivateRoute path="/users/profile/:id"  >
+            <UserProfileDetails />
+          </PrivateRoute> 
           < Route path="/home" component={Home} />
           < Route path="/myPost" component={UserPost} />
-          {/* <Route path="/addPost" component={AddPost} /> */}
+          <Route path="/users" component={UserInfo} />
           < Route path="/login" component={Login} />
           <Route exact path="/" component={Home} />
           <Route path="*" component={NotFound} />

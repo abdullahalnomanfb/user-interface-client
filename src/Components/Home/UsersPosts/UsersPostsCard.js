@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import './UsersCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-const UsersCard = (props) => {
 
-    const { _id, title, body, data, name } = props.user;
+const UsersPostsCard = (props) => {
+
+    const { _id, title, body, date, name } = props.user;
     // const shortBody = body.slice(0, 80);
 
 
@@ -21,18 +22,20 @@ const UsersCard = (props) => {
 
                     </Card.Title>
 
-                    <p style={{ fontSize: "13px" }} className="text-secondary ">{data}</p>
-                    <Card.Title style={{height:"40px"}} className="text-capitalize"><h6>{title}</h6></Card.Title>
+                    <p style={{ fontSize: "13px" }} className="text-secondary ">{date}</p>
+                    <Card.Title style={{ height: "40px" }} ><h6>{title}</h6></Card.Title>
                     <Card.Text className="text-capitalize" >
-                        {body}....
+                        {body.slice(0, 100)} <br /> <span className="text-secondary text-lowercase">see more....</span>
                     </Card.Text>
 
                     <Link to={`/post/details/${_id}`}>
-                        <button className="btn-primary rounded py-2 px-3">See post details</button>
+                        <div className="text-center">
+                            <button className="btn-primary rounded py-2 px-3">See post details</button>
+                        </div>
                     </Link>
 
                 </Card.Body>
-            </Card> 
+            </Card>
 
 
 
@@ -42,4 +45,4 @@ const UsersCard = (props) => {
     );
 };
 
-export default UsersCard;
+export default UsersPostsCard;

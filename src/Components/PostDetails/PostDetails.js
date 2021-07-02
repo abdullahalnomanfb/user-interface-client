@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import NavBars from '../Shared/NavBars/NavBars';
 import { useForm } from "react-hook-form";
 import { UserContext } from '../../App';
+import PostDetailsCard from './PostDetailsCard';
 
 
 const PostDetails = () => {
@@ -25,7 +26,21 @@ const PostDetails = () => {
 
 
 
-    const onSubmit = data => {
+    const [comments, setComments] = useState([])
+
+    const [modifyComment, setModifyComment] = useState(1)
+
+    // console.log("modify",modifyComment);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/comments/${_id}`)
+            .then(res => res.json())
+            .then(data => setComments(data))
+    }, [modifyComment])
+
+
+
+    const onSubmit = (data, e) => {
 
 
         const commentDetails = {
@@ -36,7 +51,7 @@ const PostDetails = () => {
             date: new Date().toDateString()
         }
 
-        console.log(commentDetails);
+
 
         fetch('http://localhost:5000/addComment', {
             method: 'post',
@@ -46,36 +61,31 @@ const PostDetails = () => {
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    alert("Message has send")
+                    // alert("Message has send")
+                    setModifyComment(modifyComment + 1)
                 }
             })
+
+        e.target.reset()
     }
 
 
 
-    const [comments, setComments] = useState([])
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/comments/${_id}`)
-            .then(res => res.json())
-            .then(data => setComments(data))
-    }, [])
 
 
-    console.log("comments", comments);
+    // console.log("comments", comments);
 
     return (
 
         <>
             <NavBars />
             <div className="container mt-5 ">
-                <p className="text-secondary">Biyans Who <span>20-07-2020</span>   </p>
+                
                 <h1 className="text-primary text-capitalize">{findPost?.title}</h1>
                 <p className="text-capitalize mt-5">{findPost?.body}</p>
 
-                <h6>{logInUser.name}</h6>
                 {
-                    comments.map(comment => <li key={comment.id}> {comment.message}</li>)
+                    comments.map(comment => <PostDetailsCard key={comment._id} comment={comment} />)
                 }
 
 
@@ -83,8 +93,8 @@ const PostDetails = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <input className="form-control w-25" {...register("message", { required: true })} placeholder="Write a comment" />
-                        {errors.message && <span className="text-danger">Message field is required</span>} <br /><br />
-                        <button className="btn-primary py-2 px-3 rounded">Add Comment</button>
+                        {errors.message && <span className="text-danger">Message field is required</span>} <br />
+                        <button className="btn-success py-2 px-3 rounded mb-5">Add Comment</button>
                     </form>
                 </div>
 
