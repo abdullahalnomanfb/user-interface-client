@@ -9,7 +9,7 @@ const UserPostCard = (props) => {
     const { _id, title, body, name } = props.singlePost;
 
     const handleDelete = (_id, e) => {
-        fetch(`http://localhost:5000/delete/${_id}`, { method: 'DELETE' })
+        fetch(`https://immense-tor-26147.herokuapp.com/delete/${_id}`, { method: 'DELETE' })
             .then(res => {
                 e.target.parentNode.parentNode.parentNode.style.display = "none";
             })

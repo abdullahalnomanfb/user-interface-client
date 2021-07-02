@@ -21,7 +21,7 @@ const UpdateForm = ({ show, setShow, postInfo }) => {
         const body = data.body;
         const postDetails = { id, title, body }
 
-        fetch(`http://localhost:5000/update/${id}`, {
+        fetch(`https://immense-tor-26147.herokuapp.com/update/${id}`, {
             method: 'PATCH',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(postDetails)

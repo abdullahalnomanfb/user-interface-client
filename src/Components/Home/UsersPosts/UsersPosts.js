@@ -17,7 +17,7 @@ const UsersPosts = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/posts?search=${search}`;
+        const url = `https://immense-tor-26147.herokuapp.com/posts?search=${search}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setTotalPosts(data))

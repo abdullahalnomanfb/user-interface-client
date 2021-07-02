@@ -6,13 +6,13 @@ import { UserContext } from '../../../App';
 
 const AddPost = () => {
 
-    const [logInUser,setLogInUser] = useContext(UserContext);
+    const [logInUser, setLogInUser] = useContext(UserContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const onSubmit = (data,e) => {
+    const onSubmit = (data, e) => {
 
-        const postDetails ={     
-            title : data.title,
+        const postDetails = {
+            title: data.title,
             body: data.content,
             name: logInUser.name,
             email: logInUser.email,
@@ -20,21 +20,21 @@ const AddPost = () => {
         }
 
 
-        const postMethod ={
-            method:'POST',
-            headers :{'content-Type':'application/json'},
-            body:JSON.stringify(postDetails)
+        const postMethod = {
+            method: 'POST',
+            headers: { 'content-Type': 'application/json' },
+            body: JSON.stringify(postDetails)
         }
 
-        fetch('http://localhost:5000/addPost',postMethod)
-        .then( res => res.json()) 
-        .then( result => {
-            if(result){
-                alert("Post has been publish")
-            }
-            e.target.reset()
+        fetch('https://immense-tor-26147.herokuapp.com/addPost', postMethod)
+            .then(res => res.json())
+            .then(result => {
+                if (result) {
+                    alert("Post has been publish")
+                }
+                e.target.reset()
 
-        })
+            })
 
     };
 
@@ -42,11 +42,11 @@ const AddPost = () => {
         <>
             <div className="container-fluid">
                 <div className="row">
-                    <SideBar />  
-                    <div  style={{backgroundColor:"#f0f2f5"}}className="col-md-10">
+                    <SideBar />
+                    <div style={{ backgroundColor: "#f0f2f5" }} className="col-md-10">
                         <h4 className="text-center pt-3">Hello, <span className="text-primary">{logInUser.name}</span> Let's write a post..</h4>
                         <div className="add-post-form">
-                            <form  className="mt-5 p-5 w-70" onSubmit={handleSubmit(onSubmit)}>
+                            <form className="mt-5 p-5 w-70" onSubmit={handleSubmit(onSubmit)}>
 
 
                                 <label for="exampleFormControlInput1" class="form-label">Add post title</label><br />

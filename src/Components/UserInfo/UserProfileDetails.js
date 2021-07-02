@@ -6,27 +6,27 @@ import NavBars from '../Shared/NavBars/NavBars';
 
 const UserProfileDetails = () => {
 
-     const {id}=useParams()
+    const { id } = useParams()
 
 
-     const [users,setUsers]=useState([])
-     useEffect(()=>{
-         fetch('https://jsonplaceholder.typicode.com/users')
-         .then( res => res.json())
-         .then( data =>setUsers(data))
+    const [users, setUsers] = useState([])
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(res => res.json())
+            .then(data => setUsers(data))
 
-     },[])
+    }, [])
 
-const findUser = users?.find( user => user?.id==id);
+    const findUser = users?.find(user => user?.id == id);
 
 
-console.log(findUser);
+    console.log(findUser);
 
     return (
         <>
             <NavBars />
-            
-                 <div className="container-fluid">
+
+            <div className="container-fluid">
                 <div className="row">
 
                     <div className="col-md-10 text-center">
@@ -37,9 +37,9 @@ console.log(findUser);
                 </div>
 
             </div>
-    
-            </>
-            );
+
+        </>
+    );
 };
 
-            export default UserProfileDetails;
+export default UserProfileDetails;

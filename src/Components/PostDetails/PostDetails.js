@@ -15,7 +15,7 @@ const PostDetails = () => {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/posts')
+        fetch('https://immense-tor-26147.herokuapp.com/posts')
             .then(res => res.json())
             .then(data => setPosts(data))
     }, [])
@@ -33,7 +33,7 @@ const PostDetails = () => {
     // console.log("modify",modifyComment);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/comments/${_id}`)
+        fetch(`https://immense-tor-26147.herokuapp.com/comments/${_id}`)
             .then(res => res.json())
             .then(data => setComments(data))
     }, [modifyComment])
@@ -53,7 +53,7 @@ const PostDetails = () => {
 
 
 
-        fetch('http://localhost:5000/addComment', {
+        fetch('https://immense-tor-26147.herokuapp.com/addComment', {
             method: 'post',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(commentDetails)

@@ -17,7 +17,7 @@ const UserPost = () => {
     const [post, setPost] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/post?email=${logInUser.email}`)
+        fetch(`https://immense-tor-26147.herokuapp.com/post?email=${logInUser.email}`)
             .then(res => res.json())
             .then(data => {
                 setPost(data)
