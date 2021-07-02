@@ -21,16 +21,11 @@ const PostDetails = () => {
     }, [])
 
     const findPost = posts.find(post => post._id == _id);
-    // console.log(findPost);
+
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-
-
     const [comments, setComments] = useState([])
-
     const [modifyComment, setModifyComment] = useState(1)
-
-    // console.log("modify",modifyComment);
 
     useEffect(() => {
         fetch(`https://immense-tor-26147.herokuapp.com/comments/${_id}`)
@@ -38,11 +33,7 @@ const PostDetails = () => {
             .then(data => setComments(data))
     }, [modifyComment])
 
-
-
     const onSubmit = (data, e) => {
-
-
         const commentDetails = {
             name: logInUser.name,
             email: logInUser.email,
@@ -50,8 +41,6 @@ const PostDetails = () => {
             message: data.message,
             date: new Date().toDateString()
         }
-
-
 
         fetch('https://immense-tor-26147.herokuapp.com/addComment', {
             method: 'post',
@@ -68,26 +57,17 @@ const PostDetails = () => {
 
         e.target.reset()
     }
-
-
-
-
-
-    // console.log("comments", comments);
-
     return (
-
         <>
             <NavBars />
             <div className="container mt-5 ">
-                
+
                 <h1 className="text-primary text-capitalize">{findPost?.title}</h1>
                 <p className="text-capitalize mt-5">{findPost?.body}</p>
 
                 {
                     comments.map(comment => <PostDetailsCard key={comment._id} comment={comment} />)
                 }
-
 
                 <div className="comment-form">
                     <form onSubmit={handleSubmit(onSubmit)}>

@@ -29,10 +29,8 @@ const Login = () => {
         confirmPassword: ''
     });
 
-
-
     const [newUser, setNewUser] = useState(true);
-     const [LogInUser,setLogInUser] = useContext(UserContext)
+    const [LogInUser, setLogInUser] = useContext(UserContext)
 
     const history = useHistory();
     const location = useLocation();
@@ -46,11 +44,11 @@ const Login = () => {
         firebase.auth()
             .signInWithPopup(provider)
             .then((result) => {
-                var { displayName, email,photoURL } = result.user;
-                const logInUSer = { name: displayName, email: email,photoURL }
+                var { displayName, email, photoURL } = result.user;
+                const logInUSer = { name: displayName, email: email, photoURL }
                 setLogInUser(logInUSer);
-                 history.replace(from);
-                 console.log("pop userINfo",result.user);
+                history.replace(from);
+                console.log("pop userINfo", result.user);
             })
             .catch((error) => {
                 var errorMessage = error.message;
@@ -101,7 +99,7 @@ const Login = () => {
                     const signUpUser = { name: displayName, email: email, success: true };
                     setUser(signUpUser);
                     updateUserNameHandler(user.name);
-                    console.log("user info",userCredential.user);
+                    console.log("user info", userCredential.user);
 
                 })
 
@@ -126,7 +124,7 @@ const Login = () => {
                     userInfo.success = '';
                     userInfo.name = userDetails.displayName;
                     setUser(userInfo)
-                     setLogInUser(userInfo)
+                    setLogInUser(userInfo)
                     history.replace(from);
                 })
                 .catch((error) => {
@@ -201,8 +199,8 @@ const Login = () => {
             <div className="sign-with-pop">
                 <p>Or</p>
                 <button className="btn btn-primary" onClick={handleGoogleSignIn}>
-                     <img className="img-fluid gLogo" src={gLogo} alt="" />
-                      Sign in with Google</button>
+                    <img className="img-fluid gLogo" src={gLogo} alt="" />
+                    Sign in with Google</button>
             </div>
 
         </div>

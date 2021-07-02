@@ -10,10 +10,7 @@ import { UserContext } from '../../../App';
 
 const NavBars = () => {
 
-
     const [logInUser, setLogInUser] = useContext(UserContext)
-
-
     return (
         <>
             <Navbar style={{ backgroundColor: "#6047ec" }} sticky="top" expand="lg">
@@ -34,7 +31,7 @@ const NavBars = () => {
                                 <NavDropdown
                                     id="navbarScrollingDropdown"
                                     title={
-                                        logInUser.photoURL ? <img className="nav-img" src={logInUser.photoURL} alt="" /> : <FontAwesomeIcon icon={faUserCircle} style={{ fontSize: '25px',color:"white" }} />
+                                        logInUser.photoURL ? <img className="nav-img" src={logInUser.photoURL} alt="" /> : <FontAwesomeIcon icon={faUserCircle} style={{ fontSize: '25px', color: "white" }} />
                                     }
                                 >
                                     <div className="text-center ">
@@ -52,9 +49,9 @@ const NavBars = () => {
                                         <NavDropdown.Divider />
 
                                         <NavDropdown.Item as={Link} to="/addPost">
-                                            <div 
-                                            onClick={()=>setLogInUser({})}
-                                            className="text-danger">
+                                            <div
+                                                onClick={() => setLogInUser({})}
+                                                className="text-danger">
                                                 <FontAwesomeIcon icon={faSignOutAlt} className="black" />
                                                 <b className="black" > Log Out</b>
                                             </div>

@@ -10,7 +10,6 @@ const UpdateForm = ({ show, setShow, postInfo }) => {
 
     const [modify, setModify] = useContext(PostContext)
 
-
     const { register, handleSubmit, formState: { errors } } = useForm();
     const handleClose = () => setShow(false);
 
@@ -31,7 +30,6 @@ const UpdateForm = ({ show, setShow, postInfo }) => {
                 if (data) {
                     setModify(modify * 2)
                     // setCount(count+1)
-
                 }
             })
         setShow(false)
@@ -46,25 +44,17 @@ const UpdateForm = ({ show, setShow, postInfo }) => {
                     <Modal.Title>Update Post</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-
-
                     <form onSubmit={handleSubmit(onSubmit)}>
-
-
                         <div className="form-group row w-75 text-center m-auto ">
                             <input className="form-control" defaultValue={postInfo.title} {...register("title")} /> <br />
                         </div><br />
-
                         <div className="form-group row m-auto w-75 ">
-
                             <textarea className="form-control" defaultValue={postInfo.body} {...register("body")} id="" cols="30" rows="7"></textarea>
                         </div>
-
-                        <Modal.Footer style={{marginTop:"20px"}}>
-                          <input className="btn-success px-4 py-2 rounded" type="submit" value="Update" />
+                        <Modal.Footer style={{ marginTop: "20px" }}>
+                            <input className="btn-success px-4 py-2 rounded" type="submit" value="Update" />
                         </Modal.Footer>
                     </form>
-
                 </Modal.Body>
             </Modal>
         </>

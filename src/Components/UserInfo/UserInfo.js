@@ -7,22 +7,15 @@ import './UserInfo.css';
 
 const UserInfo = () => {
 
-
-
-
-
     const [users, setUsers] = useState([])
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(res => res.json())
             .then(data => setUsers(data))
-
     }, [])
 
 
-
     return (
-
         <div className="container-fluid">
             <div className="row mb-5">
                 <SideBar />
@@ -47,10 +40,8 @@ const UserInfo = () => {
                             </tbody>)
                     }
                 </div>
-
             </div>
         </div>
-
     );
 };
 

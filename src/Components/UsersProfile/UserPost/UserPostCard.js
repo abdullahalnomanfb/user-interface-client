@@ -14,9 +14,7 @@ const UserPostCard = (props) => {
                 e.target.parentNode.parentNode.parentNode.style.display = "none";
             })
     }
-
     const [show, setShow] = useState(false);
-
     const handleShow = () => setShow(true);
 
     const postInfo = props.singlePost;
@@ -27,7 +25,7 @@ const UserPostCard = (props) => {
                     <Card.Body className="card-hover " style={{ backgroundColor: '#ffffff', borderRadius: '10px', boxShadow: '10px 10px 29px #ddd' }}>
                         <Card.Title className="text-primary">{name}</Card.Title>
                         <Card.Subtitle className="mb-2 text-muted">{title}</Card.Subtitle>
-                        <Card.Text style={{ height: "150px" ,overflow:'auto'}}>
+                        <Card.Text style={{ height: "150px", overflow: 'auto' }}>
                             {body}
                         </Card.Text>
                         <Button className="btn-success mx-4"

@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import {faSignOutAlt, faHome, faPlus, faUser, faUserAlt, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt, faHome, faPlus, faUser, faUserAlt, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { Link, useParams } from 'react-router-dom';
 import './SideBar.css';
 
@@ -23,15 +23,11 @@ const SideBar = () => {
                         <FontAwesomeIcon icon={faPlus} /> <span>Add new post</span>
                     </Link>
                 </li>
-
-                
                 <li>
                     <Link to="/myPost" className="text-white">
                         <FontAwesomeIcon icon={faUser} /> <span>My post</span>
                     </Link>
                 </li>
-
-                
                 <li>
                     <Link to="/users" className="text-white">
                         <FontAwesomeIcon icon={faUsers} /> <span>Users</span>

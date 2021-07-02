@@ -10,7 +10,6 @@ const AddPost = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = (data, e) => {
-
         const postDetails = {
             title: data.title,
             body: data.content,
@@ -18,8 +17,6 @@ const AddPost = () => {
             email: logInUser.email,
             date: new Date().toDateString()
         }
-
-
         const postMethod = {
             method: 'POST',
             headers: { 'content-Type': 'application/json' },
@@ -33,11 +30,8 @@ const AddPost = () => {
                     alert("Post has been publish")
                 }
                 e.target.reset()
-
             })
-
     };
-
     return (
         <>
             <div className="container-fluid">
@@ -47,8 +41,6 @@ const AddPost = () => {
                         <h4 className="text-center pt-3">Hello, <span className="text-primary">{logInUser.name}</span> Let's write a post..</h4>
                         <div className="add-post-form">
                             <form className="mt-5 p-5 w-70" onSubmit={handleSubmit(onSubmit)}>
-
-
                                 <label for="exampleFormControlInput1" class="form-label">Add post title</label><br />
                                 <input className="form-control" {...register("title", { required: true })} />
                                 {errors.title && <span className="error">Title field is required</span>} <br />
@@ -64,16 +56,10 @@ const AddPost = () => {
                                 </div>
 
                             </form>
-
-
                         </div>
-
                     </div>
-
                 </div>
             </div>
-
-
         </>
     );
 };

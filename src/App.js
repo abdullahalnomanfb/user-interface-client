@@ -31,15 +31,13 @@ const App = () => {
           <PrivateRoute path="/post/details/:_id"  >
             <PostDetails />
           </PrivateRoute>
-
-          
           <PrivateRoute path="/addPost"  >
             <AddPost />
           </PrivateRoute>
-         
+
           <PrivateRoute path="/users/profile/:id"  >
             <UserProfileDetails />
-          </PrivateRoute> 
+          </PrivateRoute>
           < Route path="/home" component={Home} />
           < Route path="/myPost" component={UserPost} />
           <Route path="/users" component={UserInfo} />
