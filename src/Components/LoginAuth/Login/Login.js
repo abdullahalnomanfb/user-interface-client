@@ -48,7 +48,6 @@ const Login = () => {
                 const logInUSer = { name: displayName, email: email, photoURL }
                 setLogInUser(logInUSer);
                 history.replace(from);
-                console.log("pop userINfo", result.user);
             })
             .catch((error) => {
                 var errorMessage = error.message;

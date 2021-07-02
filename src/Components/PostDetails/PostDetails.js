@@ -15,9 +15,10 @@ const PostDetails = () => {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        fetch('https://immense-tor-26147.herokuapp.com/posts')
+        fetch('https://immense-tor-26147.herokuapp.com/AllPosts')
             .then(res => res.json())
             .then(data => setPosts(data))
+            // .then(data => console.log("data",data))
     }, [])
 
     const findPost = posts.find(post => post._id == _id);
@@ -27,11 +28,14 @@ const PostDetails = () => {
     const [comments, setComments] = useState([])
     const [modifyComment, setModifyComment] = useState(1)
 
+
+    //  console.log("post",posts);
+
     useEffect(() => {
         fetch(`https://immense-tor-26147.herokuapp.com/comments/${_id}`)
             .then(res => res.json())
             .then(data => setComments(data))
-    }, [modifyComment])
+    }, [modifyComment]) 
 
     const onSubmit = (data, e) => {
         const commentDetails = {

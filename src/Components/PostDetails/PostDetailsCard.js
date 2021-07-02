@@ -6,7 +6,7 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 const PostDetailsCard = (props) => {
 
-    console.log("detailsCard", props.comment);
+    // console.log("detailsCard", props.comment);
     const { date, message, name } = props.comment;
 
     return (
